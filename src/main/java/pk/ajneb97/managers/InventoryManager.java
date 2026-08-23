@@ -218,7 +218,14 @@ public class InventoryManager {
         item.setItemMeta(meta);
 
         item = ItemUtils.setTagStringItem(plugin,item,"playerkits_arrange_kit",kit.getName());
-        inv.setItem(mainConfigManager.getKitLayoutButtonSlot(),item);
+
+        int slot = mainConfigManager.getKitLayoutButtonSlot();
+        if(slot < 0 || slot >= inv.getSize()){
+            plugin.getLogger().warning("kit_layout.button.slot ("+slot+") is out of bounds for the preview inventory " +
+                    "(size "+inv.getSize()+"). Please fix this value in the main config. Skipping the arrange button.");
+            return;
+        }
+        inv.setItem(slot,item);
     }
 
     public void clickInventory(InventoryPlayer inventoryPlayer, ItemStack item, ClickType clickType){
