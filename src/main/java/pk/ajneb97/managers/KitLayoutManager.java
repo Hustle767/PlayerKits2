@@ -37,8 +37,8 @@ public class KitLayoutManager {
     public static final int INVENTORY_SIZE = 45;
     public static final int INTERACTIVE_START = 0;
     public static final int INTERACTIVE_END = 35;
-    public static final int RESET_SLOT = 36;
-    public static final int BACK_SLOT = 37;
+    public static final int RESET_SLOT = 43;
+    public static final int BACK_SLOT = 36;
     public static final int SAVE_SLOT = 44;
 
     public static final String TAG_INDEX = "playerkits_layout_index";
